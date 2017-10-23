@@ -30,29 +30,23 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  #支持的平台及版本
-  s.platform     = :ios, '8.0'
-
-  #arc模式
-  s.requires_arc = true
-
 #打包之前，先把2)注释掉，提交代码到远程，开始打包pod package AHButtonLib.podspec
 #然后执行pod update --no-repo-update，
 #第一种，如果留下2)，1)和3)要注释掉，打正式包用的；
 #第二种，如果留下1)和3)，要注释掉2)，这种情况是测试源码的。
 
 #1)源码路径
-s.source_files = 'AHButtonLib/Classes/**/*'
+#s.source_files = 'AHButtonLib/Classes/**/*'
 
 #2)framework
-#s.ios.vendored_frameworks = 'AHButtonLib-0.1.0/ios/AHButtonLib.framework'
+  s.ios.vendored_frameworks = 'AHButtonLib-0.1.0/ios/AHButtonLib.framework'
 
   # s.resource_bundles = {
   #   'AHButtonLib' => ['AHButtonLib/Assets/*.png']
   # }
 
 #3)源码路径下 头文件路径
-s.public_header_files = 'AHButtonLib/Classes/**/*.h'
+#s.public_header_files = 'AHButtonLib/Classes/**/*.h'
 
   s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'Masonry', '~> 1.0.2'
